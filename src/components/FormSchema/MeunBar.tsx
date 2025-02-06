@@ -12,7 +12,7 @@ const MenuBar: React.FC = () => {
       {/* Hamburger Icon */}
       <button
         onClick={toggleMenu}
-        className="flex flex-col justify-between w-8 h-8 focus:outline-none"
+        className="flex flex-col justify-between w-8 h-6 focus:outline-none"
       >
         {!isOpen ? (
           // Hamburger Menu

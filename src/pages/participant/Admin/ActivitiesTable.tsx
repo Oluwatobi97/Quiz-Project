@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+// import axios from "axios"; // this is for the db
 
 interface Activity {
   type: string;
@@ -6,15 +7,49 @@ interface Activity {
   duration: string;
 }
 
+// export const ActivitiesTable: React.FC = () => {
+//   const [activities, setActivities] = useState<Activity[]>([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState<string | null>(null);
+
+//   useEffect(() => {
+//     const fetchActivities = async () => {
+//       try {
+//         const response = await axios.get<Activity[]>('/api/activities'); // Replace with your API endpoint
+//         setActivities(response.data);
+//         setLoading(false);
+//       } catch (err) {
+//         setError('Failed to fetch activities');
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchActivities();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (error) return <div>Error: {error}</div>;
+
+// this is for when you want to connect it to the db i will comment it for now because am not making us of it
+
 const activities: Activity[] = [
   { type: "Bible Quiz", participants: 10, duration: "15s" },
   { type: "Math", participants: 50, duration: "1hr" },
   { type: "Promotion Exam", participants: 100, duration: "30min" },
   { type: "Chemistry", participants: 20, duration: "1:30hr" },
+  { type: "Biology", participants: 150, duration: "2hr" },
+  { type: "Data Science", participants: 150, duration: "2hr" },
+
+  { type: "Data Analyst", participants: 150, duration: "2hr" },
+  { type: "English", participants: 150, duration: "2hr" },
+  { type: "English", participants: 150, duration: "2hr" },
+  { type: "English", participants: 150, duration: "2hr" },
+  { type: "English", participants: 150, duration: "2hr" },
+  { type: "English", participants: 150, duration: "2hr" },
   { type: "English", participants: 150, duration: "2hr" },
 ];
 
-const ActivitiesTable: React.FC = () => {
+export const ActivitiesTable: React.FC = () => {
   return (
     <section className="p-4">
       <h2 className="text-lg font-semibold mb-4">Activities:</h2>
@@ -49,5 +84,3 @@ const ActivitiesTable: React.FC = () => {
     </section>
   );
 };
-
-export default ActivitiesTable;
