@@ -7,6 +7,7 @@ import {
   Questions,
   Result,
   Admin,
+  CreateQuiz,
 } from "./participant/exports";
 import { ParticipantLayouts } from "../layouts/participants/ParticipantLayouts";
 
@@ -15,6 +16,7 @@ import { ParticipantLayouts } from "../layouts/participants/ParticipantLayouts";
 // result page
 // answers page
 // admin page
+// CreateQuiz Page
 
 export const AllRoutes = () => {
   return (
@@ -31,6 +33,7 @@ export const AllRoutes = () => {
       <Route path="/:id/results" element={<Result />} />
       <Route path="/:id/answers" element={<Answers />} />
       <Route path="/:id/admin" element={<Admin />} />
+      <Route path="/:id/create-quiz" element={<CreateQuiz />} />
     </Routes>
   );
 };
